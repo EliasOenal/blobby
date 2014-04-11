@@ -190,21 +190,23 @@ void CreditsState::step_impl()
 	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+170), "  (svenrech(at)gmx.de)", TF_SMALL_FONT);
 	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+195), "Erik Schultheis");
 	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+225), "  (erik-schultheis(at)freenet.de)", TF_SMALL_FONT);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+250), "Elias Önal");
+        imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+280), "  (blobby(at)eliasoenal.com)", TF_SMALL_FONT);
 
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+255), TextManager::CRD_GRAPHICS);
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+285), "Silvio Mummert");
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+315), "  (mummertathome(at)t-online.de)", TF_SMALL_FONT);
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+340), "Richard Bertrand");
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+370), "  (ricbertrand(at)hotmail.com)", TF_SMALL_FONT);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+310), TextManager::CRD_GRAPHICS);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+340), "Silvio Mummert");
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+370), "  (mummertathome(at)t-online.de)", TF_SMALL_FONT);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+400), "Richard Bertrand");
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+430), "  (ricbertrand(at)hotmail.com)", TF_SMALL_FONT);
 
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+415), TextManager::CRD_THX);
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+445), "Daniel Skoraszewsky");
-	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+475), "  (skoraszewsky(at)t-online.de)", TF_SMALL_FONT);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+475), TextManager::CRD_THX);
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+505), "Daniel Skoraszewsky");
+	imgui.doText(GEN_ID, Vector2(xPosition, mYPosition+535), "  (skoraszewsky(at)t-online.de)", TF_SMALL_FONT);
 
 	if (mYPosition > 20)
 		mYPosition -= 2.5;
 
-	if (imgui.doButton(GEN_ID, Vector2(400.0, 560.0), TextManager::LBL_CANCEL))
+	if (imgui.doButton(GEN_ID, Vector2(600.0, 560.0), TextManager::LBL_CANCEL))
 	{
 		switchState(new MainMenuState());
 	}
