@@ -112,12 +112,13 @@ void RenderManagerSDL::init(int xResolution, int yResolution, bool fullscreen)
 		screenFlags);
 
 	// Set icon
+#if !defined(MAC_OS_X)
 	SDL_Surface* icon = loadSurface("Icon.bmp");
 	SDL_SetColorKey(icon, SDL_TRUE,
 			SDL_MapRGB(icon->format, 0, 0, 0));
 	SDL_SetWindowIcon(mWindow, icon);
 	SDL_FreeSurface(icon);
-
+#endif
 	// Create renderer to draw in window
 	mRenderer = SDL_CreateRenderer(mWindow, -1, 0);
 

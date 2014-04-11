@@ -38,6 +38,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	#else
 		#include "config.h"
 	#endif
+	#ifdef MAC_OS_X
+		#include <physfs.h>
+	#endif
 #endif
 
 #include "RenderManager.h"
@@ -86,6 +89,9 @@ void setupPHYSFS()
 	#ifdef __APPLE__
 		#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 			baseSearchPath = PHYSFS_getBaseDir();
+		#endif
+		#ifdef MAC_OS_X
+			baseSearchPath = PHYSFS_getBaseDir() + std::string("Contents") + separator + std::string("Resources") + separator + std::string("data") + separator;
 		#endif
 	#endif
 
@@ -166,7 +172,7 @@ void setupPHYSFS()
 	#undef main
 	extern "C"
 	int SDL_main(int argc, char* argv[])
-#elif __APPLE__
+#elif defined(__APPLE__) && !defined(MAC_OS_X)
 	#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 		int main(int argc, char* argv[])
 	#else
