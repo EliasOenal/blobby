@@ -1,0 +1,26 @@
+TODO:
+
+coderework:
+- new clean rendererarchitecture
+- multithreading
+	fps independent physics
+- new gui system
+
+features:
+- full unicode support (e.g. for Russian characters)
+- improve replays (fast forward, rewind, etc)
+- improve bot system (more commands etc)
+- more dedicated server options (black/whitelist, statistics, etc)
+
+bugs:
+- net bugs:
+ - squeezing ball through blocking blobby ?  
+     Please try to verify this
+ - flat ball (replay Mr. Enderson)
+- don't close chat if one player leaves the game
+- whistle at the end of networkgame
+- ... has won screen in replay player when game ended prematurely
+
+data:
+- monochrome font
+- more translation
